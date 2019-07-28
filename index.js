@@ -7,6 +7,7 @@ const Port = process.env.PORT || 3001;
 const Auth = require("./routes/auth");
 const Post = require("./routes/post");
 const path = require("path");
+const way = require("../Reactjs/build")
 
 
 app.use(cors());
@@ -19,7 +20,7 @@ app.use("/post", Post);
 
 
 app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, '../Reactjs/build', 'index.html'));
+    response.sendFile(path.resolve(__dirname, "../Reactjs/build", 'index.html'));
 });
 
 app.use(function (req, res, next) {
