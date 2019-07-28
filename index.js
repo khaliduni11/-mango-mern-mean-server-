@@ -6,12 +6,10 @@ const bodyParser = require("body-parser");
 const Port = process.env.PORT || 3001;
 const Auth = require("./routes/auth");
 const Post = require("./routes/post");
-const path = require("path");
-const way = require("../Reactjs/build")
 
 
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 app.use("/user/auth", Auth);
@@ -19,9 +17,6 @@ app.use("/user/auth", Auth);
 app.use("/post", Post);
 
 
-app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, "../Reactjs/build", 'index.html'));
-});
 
 app.use(function (req, res, next) {
     let err = new Error("Not Found");
@@ -29,7 +24,7 @@ app.use(function (req, res, next) {
     next(err);
 });
 
-app.use(function (error, request, respone, next) {
+app.use(function(error, request, respone, next){
     return respone.status(error.status || 500).json({
         message: error.message || "Oops something went wrong"
     })
