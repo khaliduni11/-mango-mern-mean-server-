@@ -12,9 +12,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use("/user/auth", Auth);
+app.use("/mango/user/auth", Auth);
 
-app.use("/post", Post);
+app.use("/mango/post", Post);
 
 
 
