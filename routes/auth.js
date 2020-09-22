@@ -45,7 +45,7 @@ function verifiedCorrectly(email, res) {
 
 //creating transporter of nodemailer
 let transporter = nodemailer.createTransport({
-    service: "outlook",
+    service: "hotmail",
     auth: {
         user: process.env.EMAIL, // generated ethereal user
         pass: process.env.PASSWORD // generated ethereal password
