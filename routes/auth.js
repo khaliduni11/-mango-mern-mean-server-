@@ -36,7 +36,7 @@ function verifiedCorrectly(email, res) {
                 message: "verify your account"
             })
         } else {
-            return res.status(200).json({
+            return res.status(400).json({
                 message: "you have entered wrong email"
             })
         }
@@ -45,7 +45,7 @@ function verifiedCorrectly(email, res) {
 
 //creating transporter of nodemailer
 let transporter = nodemailer.createTransport({
-    service: "gmail",
+    service: "outlook",
     auth: {
         user: process.env.EMAIL, // generated ethereal user
         pass: process.env.PASSWORD // generated ethereal password
