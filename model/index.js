@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 mongoose.set("debug", true);
 mongoose.Promise = Promise;
 
-mongoose.connect("mongodb+srv://khalid:khalid@cluster0-irlfb.mongodb.net/test?retryWrites=true&w=majority", {
+mongoose.connect(`${process.env.MongoAPI}`, {
     keepAlive: true,
     useNewUrlParser: true,
     useFindAndModify: false,
